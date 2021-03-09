@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MealComponent } from './meal/meal.component';
 import { ProductsComponent } from './products/products.component';
 import { DataService } from './services/data.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DataService } from './services/data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
 
   ],
   providers: [DataService],
