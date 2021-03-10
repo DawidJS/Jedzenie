@@ -1,1 +1,21 @@
-<p>products works!</p>
+
+<button (click)="showList()">SHOW</button>
+<br>
+<br>
+
+<input type="text" [(ngModel)]="newProduct.name" placeholder="nazwa">
+<br>
+<input type="text" [(ngModel)]="newProduct.kcal" placeholder="ilość kcal">
+
+<button (click)="addList()">add</button>
+<br>
+<br>
+<li *ngFor="let product of productsList">
+  <span>{{product.name}} {{product.kcal}}</span>
+  <button (click)="removeList(product)">usun</button>
+
+  <input type="text" [(ngModel)]="product.name" placeholder="wpisz nazwę">
+  <input type="text" [(ngModel)]="product.kcal" placeholder="podaj kcal">
+  <button (click)="editList(product)">edytuj</button>
+</li>
+

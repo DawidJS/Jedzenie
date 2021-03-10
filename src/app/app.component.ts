@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { __values } from 'tslib';
 import { Dish } from './models/Dish';
 import { Product } from './models/Product';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -24,4 +24,6 @@ export class AppComponent {
     }
   }
 
+  title = 'Jedzenie';
+  constructor() {}
 }
