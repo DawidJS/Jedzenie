@@ -1,18 +1,21 @@
-
 <div class="component">
+  <h1>Lista produktów</h1>
   <div class="options">
-    <button *ngIf="!editMode" (click)="editMode=!editMode">Edytuj produkty</button>
-    <button *ngIf="editMode" (click)="saveProducts()">Zapisz</button>
-    <button *ngIf="editMode" (click)="cancelEditMode()">Anuluj</button>
-    <button (click)="addProduct()">Dodaj produkt</button>
+    <button mat-raised-button *ngIf="!editMode" (click)="editMode=!editMode">Edytuj produkty</button>
+    <button mat-raised-button color="primary" *ngIf="editMode" (click)="saveProducts()">Zapisz</button>
+    <button mat-raised-button color="warn" *ngIf="editMode" (click)="cancelEditMode()">Anuluj</button>
+    <button mat-raised-button (click)="addProduct()">Dodaj produkt</button>
   </div>
   <br>
   <ul>
     <li *ngFor="let product of productsList" (click)="sendProduct(product)">
-      <input type="text" [disabled]="!editMode" [(ngModel)]="product.name" placeholder="wpisz nazwę">
-      <input type="text" [disabled]="!editMode" type="number" [(ngModel)]="product.kcal" placeholder="podaj kcal">
-      <button *ngIf="editMode" (click)="removeProduct(product)">Usuń</button>
+   
+        <input type="text" blure [readonly]="!editMode" [(ngModel)]="product.name" placeholder="Nazwa">
+  
+        <input  type="text" [readonly]="!editMode" type="number" [(ngModel)]="product.kcal"
+          placeholder="Kalorie">
+    
+      <button mat-button *ngIf="editMode" color="primary" (click)="removeProduct(product)">Usuń</button>
     </li>
   </ul>
 </div>
-

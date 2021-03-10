@@ -57,5 +57,8 @@ export class ProductsComponent implements OnInit {
     this.productsList = this.dataServices.getProducts();
     this.editMode = false;
   }
+
+
+  
 }
 

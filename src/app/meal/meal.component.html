@@ -1,13 +1,22 @@
 <div class="component">
-  <ul>
-    <li *ngFor="let dish of meal">
-      <span>
-        {{dish.product.name}} - {{dish.product.kcal}}kcal x {{dish.count}}
-      </span>
-      <button (click)="removeDish.emit(dish)">Usuń z Listy</button>
-    </li>
-  </ul>
+  <h1>Twoje śniadanie</h1>
+  <mat-list *ngFor="let dish of meal">
+    <mat-list-item>
+      <div class="list-item">
+        <span>
+          {{dish.product.name}}
+        </span>
+        <span>
+          {{dish.product.kcal}}kcal
+        </span>
+        <span> {{dish.count}}x</span>
+        <button mat-raised-button color="warn" (click)="removeDish.emit(dish)">Usuń</button>
+      </div>
 
+    </mat-list-item>
+    <mat-divider></mat-divider>
 
-  <div class="summary">Suma kalorii: {{getKCal()}} kcal</div>
+  </mat-list>
+
+  <div class="summary">Suma kalorii: <strong>{{getKCal()}} kcal</strong></div>
 </div>
