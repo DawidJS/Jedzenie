@@ -24,4 +24,11 @@ export class AppComponent {
     }
   }
 
+  removeDishFromMeal(dish: Dish){
+    if (dish.count > 1) dish.count -= 1;
+    else {
+      this.meal = this.meal.filter(d => d.product.id != dish.product.id);
+    }
+  }
+
 }

@@ -24,7 +24,15 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct() {
-    this.productsList.push(new Product());
+    let newProduct = new Product();
+    //szukamy nowego id
+    let maxId = 0;
+    for (let i = 0; i < this.productsList.length; i++) {
+      let prodId = this.productsList[i].id;
+      if (prodId > maxId) maxId = prodId;
+    }
+    newProduct.id = maxId + 1;
+    this.productsList.push(newProduct);
     this.editMode = true;
   }
 
