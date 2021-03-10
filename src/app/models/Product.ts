@@ -1,4 +1,4 @@
-export interface Product {
-  name: string;
-  kcal: number;
+export class Product {
+  name!: string;
+  kcal: number =0;
 }

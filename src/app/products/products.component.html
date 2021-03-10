@@ -1,19 +1,16 @@
-<button (click)="showList()">SHOW</button>
-<br>
-<br>
-
-<input type="text" [(ngModel)]="newProduct.name" placeholder="nazwa">
-<br>
-<input type="text" [(ngModel)]="newProduct.kcal" placeholder="ilość kcal">
-
-<button (click)="addList()">add</button>
-<br>
-<br>
-<li *ngFor="let product of productsList">
-  <span>{{product.name}} {{product.kcal}}</span>
-  <button (click)="removeList(product)">usun</button>
-
-  <input type="text" [(ngModel)]="product.name" placeholder="wpisz nazwę">
-  <input type="text" [(ngModel)]="product.kcal" placeholder="podaj kcal">
-  <button (click)="editList(product)">edytuj</button>
-</li>
+<div class="component">
+  <div class="options">
+    <button *ngIf="!editMode" (click)="editMode=!editMode">Edytuj produkty</button>
+    <button *ngIf="editMode" (click)="saveProducts()">Zapisz</button>
+    <button *ngIf="editMode" (click)="cancelEditMode()">Anuluj</button>
+    <button (click)="addProduct()">Dodaj produkt</button>
+  </div>
+  <br>
+  <ul>
+    <li *ngFor="let product of productsList" (click)="sendProduct(product)">
+      <input type="text" [disabled]="!editMode" [(ngModel)]="product.name" placeholder="wpisz nazwę">
+      <input type="text" [disabled]="!editMode" type="number" [(ngModel)]="product.kcal" placeholder="podaj kcal">
+      <button *ngIf="editMode" (click)="removeProduct(product)">Usuń</button>
+    </li>
+  </ul>
+</div>
