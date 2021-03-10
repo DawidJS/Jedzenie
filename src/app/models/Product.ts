@@ -1,4 +1,7 @@
-export class Product {
-  name!: string;
-  kcal: number =0;
+
+export interface Product {
+  id: number;
+  name: string;
+  kcal: number;
+
 }

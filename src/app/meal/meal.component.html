@@ -1,1 +1,11 @@
-<p>meal works!</p>
+<ul>
+  <li *ngFor="let dish of meal">
+    <span>
+      {{dish.product.name}} - {{dish.product.kcal}}kcal x {{dish.count}}
+    </span>
+    <button (click)="remove(dish)">Usuń z Listy</button>
+  </li>
+</ul>
+
+
+<div class="summary">Suma kalorii: {{getKCal()}} kcal</div>

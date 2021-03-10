@@ -1,13 +1,16 @@
+
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from '../models/Product';
 import { DataService } from '../services/data.service';
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.less'],
+  styleUrls: ['./products.component.less']
 })
 export class ProductsComponent implements OnInit {
+
   productsList: Product[] = [];
   editMode: boolean = false;
 
@@ -47,3 +50,4 @@ export class ProductsComponent implements OnInit {
     this.editMode = false;
   }
 }
+

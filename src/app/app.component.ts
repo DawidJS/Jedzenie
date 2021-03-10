@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from './services/data.service';
+import { __values } from 'tslib';
+import { Dish } from './models/Dish';
+import { Product } from './models/Product';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,19 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  title = 'Jedzenie';
-  constructor() {}
+
+  meal: Dish[] = [];
+
+  addPoductToMeal(product: Product): void {
+    console.log(product);
+    let dish = this.meal.find(d => d.product.id == product.id);
+    if (dish) dish.count += 1;
+    else {
+      dish = new Dish();
+      dish.count =1;
+      dish.product = product;
+      this.meal.push(dish);
+    }
+  }
+
 }
