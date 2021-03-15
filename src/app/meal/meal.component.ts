@@ -10,7 +10,7 @@ import { Product } from '../models/Product';
 export class MealComponent implements OnInit {
   @Input() // bedzie dawał rodzicowi mozliwosc dzialania na bindingu, to rodzic bedzie tu przysylal dane
   meal: Dish[] = [];
-  
+
   @Output()
   removeDish = new EventEmitter<Dish>();
 

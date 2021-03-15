@@ -9,12 +9,11 @@
   <br>
   <ul>
     <li *ngFor="let product of productsList" (click)="sendProduct(product)">
-   
-        <input type="text" blure [readonly]="!editMode" [(ngModel)]="product.name" placeholder="Nazwa">
-  
-        <input  type="text" [readonly]="!editMode" type="number" [(ngModel)]="product.kcal"
-          placeholder="Kalorie">
-    
+
+      <input type="text" blure [readonly]="!editMode" [(ngModel)]="product.name" placeholder="Nazwa">
+
+      <input type="text" [readonly]="!editMode" type="number" [(ngModel)]="product.kcal" placeholder="Kalorie">
+
       <button mat-button *ngIf="editMode" color="primary" (click)="removeProduct(product)">Usuń</button>
     </li>
   </ul>

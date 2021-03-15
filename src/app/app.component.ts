@@ -18,13 +18,13 @@ export class AppComponent {
     if (dish) dish.count += 1;
     else {
       dish = new Dish();
-      dish.count =1;
+      dish.count = 1;
       dish.product = product;
       this.meal.push(dish);
     }
   }
 
-  removeDishFromMeal(dish: Dish){
+  removeDishFromMeal(dish: Dish) {
     if (dish.count > 1) dish.count -= 1;
     else {
       this.meal = this.meal.filter(d => d.product.id != dish.product.id);

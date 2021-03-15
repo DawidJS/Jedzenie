@@ -1,60 +1,61 @@
 @shaddow: 1px 1px 5px -1px rgba(0, 0, 0, 0.46);
 
- .component {
+.component {
 
-   border-radius: 5px;
-   background-color: whitesmoke;
-   box-shadow: @shaddow;
-   padding: 10px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  box-shadow: @shaddow;
+  padding: 10px;
 
-   ul {
-     list-style: none;
-     padding-left: 5px;
-   }
+  ul {
+    list-style: none;
+    padding-left: 5px;
+  }
 
-   li {
-     cursor: pointer;
-     box-shadow: @shaddow;
-     background-color: white;
-     padding: 4px;
+  li {
+    cursor: pointer;
+    box-shadow: @shaddow;
+    background-color: white;
+    padding: 4px;
 
-     &:hover {
-         background: whitesmoke;
-     }
-     &:first-child {
-       border-radius: 4px 4px 0 0;
-     }
+    &:hover {
+      background: whitesmoke;
+    }
 
-     &:last-child {
-       border-radius: 0 0 4px 4px;
-     }
+    &:first-child {
+      border-radius: 4px 4px 0 0;
+    }
 
-     input {
-       border: none;
-       background: whitesmoke;
-       outline: none;
-       box-shadow: @shaddow;
-       margin: 0 5px;
-       padding: 5px;
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
 
-       &:read-only {
-         cursor: pointer;
-         margin: 5px;
-         box-shadow: none;
-         border: none;
-         background: none;
-       }
-     }
-   }
+    input {
+      border: none;
+      background: whitesmoke;
+      outline: none;
+      box-shadow: @shaddow;
+      margin: 0 5px;
+      padding: 5px;
 
-   // button {
-   //     padding: 5px;
-   //     font-size: 14px;
-   //     background-color: rgb(60, 131, 238);
-   //     border-radius: 4px;
-   //     border: none;
-   //     box-shadow:  @shaddow;
-   //     margin: 5px;
-   //     color: white;
-   // }
- }
+      &:read-only {
+        cursor: pointer;
+        margin: 5px;
+        box-shadow: none;
+        border: none;
+        background: none;
+      }
+    }
+  }
+
+  // button {
+  //     padding: 5px;
+  //     font-size: 14px;
+  //     background-color: rgb(60, 131, 238);
+  //     border-radius: 4px;
+  //     border: none;
+  //     box-shadow:  @shaddow;
+  //     margin: 5px;
+  //     color: white;
+  // }
+}

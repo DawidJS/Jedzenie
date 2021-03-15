@@ -1,8 +1,5 @@
-
 <div class="component">
-<app-meal [meal]="meal" (removeDish)="removeDishFromMeal($event)"></app-meal>
+  <app-meal [meal]="meal" (removeDish)="removeDishFromMeal($event)"></app-meal>
 
-<app-products (productSelected)="addPoductToMeal($event)"></app-products>
-
-
+  <app-products (productSelected)="addPoductToMeal($event)"></app-products>
 </div>
